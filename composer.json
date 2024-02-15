@@ -16,7 +16,7 @@
     "require": {
         "php":            ">=8.1",
         "ext-SPL":        "*",
-        "doctrine/lexer": "~1.0 || ^2.1"
+        "doctrine/lexer": "^3"
     },
     "require-dev": {
         "phpunit/phpunit": ">=8.5"

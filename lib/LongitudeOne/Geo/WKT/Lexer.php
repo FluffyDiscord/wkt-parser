@@ -24,6 +24,7 @@
 namespace LongitudeOne\Geo\WKT;
 
 use Doctrine\Common\Lexer\AbstractLexer;
+use Doctrine\Common\Lexer\Token;
 
 /**
  * Convert spatial value to tokens
@@ -84,7 +85,7 @@ class Lexer extends AbstractLexer
      */
     public function value(): mixed
     {
-        return $this->token['value'];
+        return $this->token->value;
     }
 
     /**
@@ -95,9 +96,9 @@ class Lexer extends AbstractLexer
     protected function getType(&$value): int
     {
         if (is_numeric($value)) {
-            $value += 0;
+            $testValue = $value + 0;
 
-            if (is_int($value)) {
+            if (is_int($testValue)) {
                 return self::T_INTEGER;
             }
 
